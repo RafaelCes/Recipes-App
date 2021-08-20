@@ -1,0 +1,805 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 28,
+    "passes": 13,
+    "pending": 0,
+    "failures": 15,
+    "start": "2021-08-12T19:04:35.164Z",
+    "end": "2021-08-12T19:07:28.764Z",
+    "duration": 173600,
+    "testsRegistered": 28,
+    "passPercent": 46.42857142857143,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "45e1be09-c0dd-4d31-be5a-8e83e0ad8129",
+      "title": "",
+      "fullFile": "cypress/integration/recipe_in_progress_spec.js",
+      "file": "cypress/integration/recipe_in_progress_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7223c5f7-54e2-4490-be8f-87574d9dcc13",
+          "title": "47 - Desenvolva a tela de maneira que contenha uma imagem da receita, seu titulo, sua categoria (ou se a bebida é alcoólica ou não) uma lista de ingredientes com suas respectivas quantidade e suas instruções",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifica elementos de uma receita de comida",
+              "fullTitle": "47 - Desenvolva a tela de maneira que contenha uma imagem da receita, seu titulo, sua categoria (ou se a bebida é alcoólica ou não) uma lista de ingredientes com suas respectivas quantidade e suas instruções verifica elementos de uma receita de comida",
+              "timedOut": null,
+              "duration": 1946,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"recipe-photo\"]');\ncy.get('[data-testid=\"recipe-title\"]');\ncy.get('[data-testid=\"share-btn\"]');\ncy.get('[data-testid=\"favorite-btn\"]');\ncy.get('[data-testid=\"recipe-category\"]');\ncy.get('[data-testid*=\"ingredient-step\"]').should('have.length', 8);\ncy.get('[data-testid=\"instructions\"]');\ncy.get('[data-testid=\"finish-recipe-btn\"]');",
+              "err": {},
+              "uuid": "81abf495-11bb-47d8-a3cf-b13c6a92f3d1",
+              "parentUUID": "7223c5f7-54e2-4490-be8f-87574d9dcc13",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica elementos de uma receita de bebida",
+              "fullTitle": "47 - Desenvolva a tela de maneira que contenha uma imagem da receita, seu titulo, sua categoria (ou se a bebida é alcoólica ou não) uma lista de ingredientes com suas respectivas quantidade e suas instruções verifica elementos de uma receita de bebida",
+              "timedOut": null,
+              "duration": 10596,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"recipe-photo\"]');\ncy.get('[data-testid=\"recipe-title\"]');\ncy.get('[data-testid=\"share-btn\"]');\ncy.get('[data-testid=\"favorite-btn\"]');\ncy.get('[data-testid=\"recipe-category\"]');\ncy.get('[data-testid*=\"ingredient-step\"]').should('have.length', 3);\ncy.get('[data-testid=\"instructions\"]');\ncy.get('[data-testid=\"finish-recipe-btn\"]');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"recipe-photo\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"recipe-photo\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "4ba4d2f0-7f6f-44c1-8db9-5322b7e7c127",
+              "parentUUID": "7223c5f7-54e2-4490-be8f-87574d9dcc13",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "81abf495-11bb-47d8-a3cf-b13c6a92f3d1"
+          ],
+          "failures": [
+            "4ba4d2f0-7f6f-44c1-8db9-5322b7e7c127"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12542,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "49ff3465-91e0-42ba-ac48-e13b1a749f98",
+          "title": "48 - Desenvolva um checkbox para cada item da lista de ingredientes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "todos os ingredientes de uma receita de comida possuem um checkbox",
+              "fullTitle": "48 - Desenvolva um checkbox para cada item da lista de ingredientes todos os ingredientes de uma receita de comida possuem um checkbox",
+              "timedOut": null,
+              "duration": 668,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid*=\"ingredient-step\"]').find('input[type=\"checkbox\"]').should('have.length', 8);",
+              "err": {},
+              "uuid": "380d361b-4d2a-48dd-bc65-b9c0f7f00525",
+              "parentUUID": "49ff3465-91e0-42ba-ac48-e13b1a749f98",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "todos os ingredientes de uma receita de bebida possuem um checkbox",
+              "fullTitle": "48 - Desenvolva um checkbox para cada item da lista de ingredientes todos os ingredientes de uma receita de bebida possuem um checkbox",
+              "timedOut": null,
+              "duration": 10478,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid*=\"ingredient-step\"]').find('input[type=\"checkbox\"]').should('have.length', 3);",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid*=\"ingredient-step\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid*=\"ingredient-step\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "9d1e4110-bd17-4833-bf64-1e63bf99d989",
+              "parentUUID": "49ff3465-91e0-42ba-ac48-e13b1a749f98",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "380d361b-4d2a-48dd-bc65-b9c0f7f00525"
+          ],
+          "failures": [
+            "9d1e4110-bd17-4833-bf64-1e63bf99d989"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11146,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "67caf7ce-0ddc-4d14-9fe6-f54be67db9ef",
+          "title": "49 - Implemente uma lógica que, ao clicar no checkbox de um ingrediente, o nome dele deve ser \"riscado\" da lista",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifica se é possível marcar todos os passos da receita de comida",
+              "fullTitle": "49 - Implemente uma lógica que, ao clicar no checkbox de um ingrediente, o nome dele deve ser \"riscado\" da lista verifica se é possível marcar todos os passos da receita de comida",
+              "timedOut": null,
+              "duration": 1235,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ngetIngredients().check();\ngetIngredients().should('have.css', 'text-decoration', 'none solid rgb(0, 0, 0)');",
+              "err": {},
+              "uuid": "05df5194-f005-4dd8-a501-2b53352d9c8b",
+              "parentUUID": "67caf7ce-0ddc-4d14-9fe6-f54be67db9ef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica se é possível marcar todos os passos da receita de bebida",
+              "fullTitle": "49 - Implemente uma lógica que, ao clicar no checkbox de um ingrediente, o nome dele deve ser \"riscado\" da lista verifica se é possível marcar todos os passos da receita de bebida",
+              "timedOut": null,
+              "duration": 10487,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ngetIngredients().check();\ngetIngredients().should('have.css', 'text-decoration', 'none solid rgb(0, 0, 0)');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid*=\"ingredient-step\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid*=\"ingredient-step\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "c17c5e4f-a51b-4547-abed-b8a79347ba97",
+              "parentUUID": "67caf7ce-0ddc-4d14-9fe6-f54be67db9ef",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "05df5194-f005-4dd8-a501-2b53352d9c8b"
+          ],
+          "failures": [
+            "c17c5e4f-a51b-4547-abed-b8a79347ba97"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11722,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "ea12bd6a-f50c-4492-b989-6b91325f90d5",
+          "title": "50 - Salve o estado do progresso, que deve ser mantido caso a pessoa atualize a página ou volte para a mesma receita",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "salva o progresso de uma receita de comida em andamento",
+              "fullTitle": "50 - Salve o estado do progresso, que deve ser mantido caso a pessoa atualize a página ou volte para a mesma receita salva o progresso de uma receita de comida em andamento",
+              "timedOut": null,
+              "duration": 11666,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"0-ingredient-step\"]').find('input[type=\"checkbox\"]').check();\ncy.reload();\ncy.get('[data-testid=\"0-ingredient-step\"]').find('input[type=\"checkbox\"]').should('have.attr', 'checked');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected '<input#0-check-ingredients>' to have attribute 'checked'",
+                "estack": "CypressError: Timed out retrying: expected '<input#0-check-ingredients>' to have attribute 'checked'\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "cb6d42ed-e1eb-42fc-a17b-fa82f7f50afc",
+              "parentUUID": "ea12bd6a-f50c-4492-b989-6b91325f90d5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "salva o progresso de uma receita de bebida em andamento",
+              "fullTitle": "50 - Salve o estado do progresso, que deve ser mantido caso a pessoa atualize a página ou volte para a mesma receita salva o progresso de uma receita de bebida em andamento",
+              "timedOut": null,
+              "duration": 10666,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"0-ingredient-step\"]').find('input[type=\"checkbox\"]').check();\ncy.reload();\ncy.get('[data-testid=\"0-ingredient-step\"]').find('input[type=\"checkbox\"]').should('have.attr', 'checked');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"0-ingredient-step\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"0-ingredient-step\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "44ca347d-de5b-4277-948f-f5d3d2c0567e",
+              "parentUUID": "ea12bd6a-f50c-4492-b989-6b91325f90d5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cb6d42ed-e1eb-42fc-a17b-fa82f7f50afc",
+            "44ca347d-de5b-4277-948f-f5d3d2c0567e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22332,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+          "title": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifica se os botões estão disponíveis na tela de detalhes de uma comida",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui verifica se os botões estão disponíveis na tela de detalhes de uma comida",
+              "timedOut": null,
+              "duration": 567,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"share-btn\"]').should('exist');\ncy.get('[data-testid=\"favorite-btn\"]').should('exist');",
+              "err": {},
+              "uuid": "1f02b611-e48b-496e-b29f-918786f8b6c2",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica se os botões estão disponíveis na tela de detalhes de uma bebida",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui verifica se os botões estão disponíveis na tela de detalhes de uma bebida",
+              "timedOut": null,
+              "duration": 10641,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"share-btn\"]').should('exist');\ncy.get('[data-testid=\"favorite-btn\"]').should('exist');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"share-btn\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"share-btn\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "287ab1d7-b4a5-4aa4-a744-b0b5853194c4",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica a mensagem \"Link copiado!\" e se o link da receita da comida foi copiado para o clipboard",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui verifica a mensagem \"Link copiado!\" e se o link da receita da comida foi copiado para o clipboard",
+              "timedOut": null,
+              "duration": 558,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"share-btn\"]').click();\ncy.contains('Link copiado!');\ncy.window().then(function (win) {\n  cy.wrap(win.navigator.clipboard.readText()).should('eq', 'http://localhost:3000/comidas/52771');\n});",
+              "err": {},
+              "uuid": "3f79cab7-7d05-43b0-b54d-795ff6d3747e",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica a mensagem \"Link copiado!\" e se o link da receita da bebida foi copiado para o clipboard",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui verifica a mensagem \"Link copiado!\" e se o link da receita da bebida foi copiado para o clipboard",
+              "timedOut": null,
+              "duration": 10548,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"share-btn\"]').click();\ncy.contains('Link copiado!');\ncy.window().then(function (win) {\n  cy.wrap(win.navigator.clipboard.readText()).should('eq', 'http://localhost:3000/bebidas/178319');\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"share-btn\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"share-btn\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "8766f506-df7a-482a-a761-a07fb168981e",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica comida favoritada",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui verifica comida favoritada",
+              "timedOut": null,
+              "duration": 409,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    var favoriteRecipes = [{\n      \"id\": \"52771\",\n      \"type\": \"comida\",\n      \"area\": \"Italian\",\n      \"category\": \"Vegetarian\",\n      \"alcoholicOrNot\": \"\",\n      \"name\": \"Spicy Arrabiata Penne\",\n      \"image\": \"https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg\"\n    }];\n    localStorage.setItem('favoriteRecipes', JSON.stringify(favoriteRecipes));\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'blackHeartIcon');",
+              "err": {},
+              "uuid": "ac07e576-8fd0-4067-95f6-eea8164c89ca",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica comida não favoritada",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui verifica comida não favoritada",
+              "timedOut": null,
+              "duration": 323,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'whiteHeartIcon');",
+              "err": {},
+              "uuid": "e05578cd-b349-4604-963e-2297663d1eac",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica bebida favoritada",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui verifica bebida favoritada",
+              "timedOut": null,
+              "duration": 10476,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    var favoriteRecipes = [{\n      \"id\": \"178319\",\n      \"type\": \"bebida\",\n      \"area\": \"\",\n      \"category\": \"Cocktail\",\n      \"alcoholicOrNot\": \"Alcoholic\",\n      \"name\": \"Aquamarine\",\n      \"image\": \"https://www.thecocktaildb.com/images/media/drink/zvsre31572902738.jpg\"\n    }];\n    localStorage.setItem('favoriteRecipes', JSON.stringify(favoriteRecipes));\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'blackHeartIcon');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"favorite-btn\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"favorite-btn\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "511bc127-7782-4247-ace2-6edb0088b518",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica bebida não favoritada",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui verifica bebida não favoritada",
+              "timedOut": null,
+              "duration": 10861,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'whiteHeartIcon');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"favorite-btn\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"favorite-btn\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "7bab0e24-b0b2-4aa8-9dae-c3d6dc255bff",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "favorita comida",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui favorita comida",
+              "timedOut": null,
+              "duration": 727,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'whiteHeartIcon');\ncy.get('[data-testid=\"favorite-btn\"]').click();\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'blackHeartIcon');",
+              "err": {},
+              "uuid": "38fd0c0c-ed80-4d58-aea9-b167ee068317",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "desfavorita comida",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui desfavorita comida",
+              "timedOut": null,
+              "duration": 419,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    var favoriteRecipes = [{\n      \"id\": \"52771\",\n      \"type\": \"comida\",\n      \"area\": \"Italian\",\n      \"category\": \"Vegetarian\",\n      \"alcoholicOrNot\": \"\",\n      \"name\": \"Spicy Arrabiata Penne\",\n      \"image\": \"https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg\"\n    }];\n    localStorage.setItem('favoriteRecipes', JSON.stringify(favoriteRecipes));\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'blackHeartIcon');\ncy.get('[data-testid=\"favorite-btn\"]').click();\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'whiteHeartIcon');",
+              "err": {},
+              "uuid": "07bbb994-fc82-4471-96fc-bef11424a552",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "favorita bebida",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui favorita bebida",
+              "timedOut": null,
+              "duration": 10536,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'whiteHeartIcon');\ncy.get('[data-testid=\"favorite-btn\"]').click();\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'blackHeartIcon');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"favorite-btn\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"favorite-btn\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "01f53baa-21f7-423a-b510-6133c476be15",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "desfavorita bebida",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui desfavorita bebida",
+              "timedOut": null,
+              "duration": 10467,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    var favoriteRecipes = [{\n      \"id\": \"178319\",\n      \"type\": \"bebida\",\n      \"area\": \"\",\n      \"category\": \"Cocktail\",\n      \"alcoholicOrNot\": \"Alcoholic\",\n      \"name\": \"Aquamarine\",\n      \"image\": \"https://www.thecocktaildb.com/images/media/drink/zvsre31572902738.jpg\"\n    }];\n    localStorage.setItem('favoriteRecipes', JSON.stringify(favoriteRecipes));\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'blackHeartIcon');\ncy.get('[data-testid=\"favorite-btn\"]').click();\ncy.get('[data-testid=\"favorite-btn\"]').should('have.attr', 'src').should('include', 'whiteHeartIcon');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"favorite-btn\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"favorite-btn\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "84b9bcdc-e9aa-4b21-84cc-301afe6be75d",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "favorita receita de uma comida",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui favorita receita de uma comida",
+              "timedOut": null,
+              "duration": 429,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"favorite-btn\"]').click().then(function () {\n  var favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes'));\n  var expectedFavoriteRecipes = [{\n    id: '52771',\n    type: 'comida',\n    area: 'Italian',\n    category: 'Vegetarian',\n    alcoholicOrNot: '',\n    name: 'Spicy Arrabiata Penne',\n    image: 'https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg'\n  }];\n  expect(favoriteRecipes).to.deep.eq(expectedFavoriteRecipes);\n  localStorage.clear();\n});",
+              "err": {},
+              "uuid": "bb26f18f-e906-4a67-a65b-cc325edfc940",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "favorita receita de uma bebida",
+              "fullTitle": "51 - Desenvolva a lógica de favoritar e compartilhar, a lógica da tela de detalhes de uma receita se aplica aqui favorita receita de uma bebida",
+              "timedOut": null,
+              "duration": 10526,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"favorite-btn\"]').click().then(function () {\n  var favoriteRecipes = JSON.parse(localStorage.getItem('favoriteRecipes'));\n  var expectedFavoriteRecipes = [{\n    id: '178319',\n    type: 'bebida',\n    area: '',\n    category: 'Cocktail',\n    alcoholicOrNot: 'Alcoholic',\n    name: 'Aquamarine',\n    image: 'https://www.thecocktaildb.com/images/media/drink/zvsre31572902738.jpg'\n  }];\n  expect(favoriteRecipes).to.deep.eq(expectedFavoriteRecipes);\n  localStorage.clear();\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"favorite-btn\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"favorite-btn\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "78352d0d-b435-43df-9a4e-d071bae6dde1",
+              "parentUUID": "0cd75295-23c4-4a40-8906-1d74a495cbd9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1f02b611-e48b-496e-b29f-918786f8b6c2",
+            "3f79cab7-7d05-43b0-b54d-795ff6d3747e",
+            "ac07e576-8fd0-4067-95f6-eea8164c89ca",
+            "e05578cd-b349-4604-963e-2297663d1eac",
+            "38fd0c0c-ed80-4d58-aea9-b167ee068317",
+            "07bbb994-fc82-4471-96fc-bef11424a552",
+            "bb26f18f-e906-4a67-a65b-cc325edfc940"
+          ],
+          "failures": [
+            "287ab1d7-b4a5-4aa4-a744-b0b5853194c4",
+            "8766f506-df7a-482a-a761-a07fb168981e",
+            "511bc127-7782-4247-ace2-6edb0088b518",
+            "7bab0e24-b0b2-4aa8-9dae-c3d6dc255bff",
+            "01f53baa-21f7-423a-b510-6133c476be15",
+            "84b9bcdc-e9aa-4b21-84cc-301afe6be75d",
+            "78352d0d-b435-43df-9a4e-d071bae6dde1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 77487,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "655d88cc-cd03-45a5-ace0-02a9ac38e1a2",
+          "title": "52 - Implemente a solução de maneira que o botão de finalizar receita só pode estar habilitado quando todos os ingredientes estiverem _\"checkados\"_ (marcados)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifica se botão para finalizar está desabilitado em receitas de comidas",
+              "fullTitle": "52 - Implemente a solução de maneira que o botão de finalizar receita só pode estar habilitado quando todos os ingredientes estiverem _\"checkados\"_ (marcados) verifica se botão para finalizar está desabilitado em receitas de comidas",
+              "timedOut": null,
+              "duration": 743,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid*=\"ingredient-step\"]').find('input[type=\"checkbox\"]').first().check();\ncy.get('[data-testid=\"finish-recipe-btn\"]').should('be.disabled');",
+              "err": {},
+              "uuid": "57aee50c-9f8e-460d-b753-5bfc879218a2",
+              "parentUUID": "655d88cc-cd03-45a5-ace0-02a9ac38e1a2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica se botão para finalizar está desabilitado em receitas de bebidas",
+              "fullTitle": "52 - Implemente a solução de maneira que o botão de finalizar receita só pode estar habilitado quando todos os ingredientes estiverem _\"checkados\"_ (marcados) verifica se botão para finalizar está desabilitado em receitas de bebidas",
+              "timedOut": null,
+              "duration": 10560,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid*=\"ingredient-step\"]').find('input[type=\"checkbox\"]').first().check();\ncy.get('[data-testid=\"finish-recipe-btn\"]').should('be.disabled');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid*=\"ingredient-step\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid*=\"ingredient-step\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "846a2477-5ff5-4742-9771-724ea4e9c062",
+              "parentUUID": "655d88cc-cd03-45a5-ace0-02a9ac38e1a2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica se botão para finalizar está habilitado em receitas de comidas",
+              "fullTitle": "52 - Implemente a solução de maneira que o botão de finalizar receita só pode estar habilitado quando todos os ingredientes estiverem _\"checkados\"_ (marcados) verifica se botão para finalizar está habilitado em receitas de comidas",
+              "timedOut": null,
+              "duration": 986,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid*=\"ingredient-step\"]').find('input[type=\"checkbox\"]').check();\ncy.get('[data-testid=\"finish-recipe-btn\"]').should('be.enabled');",
+              "err": {},
+              "uuid": "4b1c508d-5ecc-4de0-adc4-03915683794c",
+              "parentUUID": "655d88cc-cd03-45a5-ace0-02a9ac38e1a2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifica se botão para finalizar está habilitado em receitas de bebidas",
+              "fullTitle": "52 - Implemente a solução de maneira que o botão de finalizar receita só pode estar habilitado quando todos os ingredientes estiverem _\"checkados\"_ (marcados) verifica se botão para finalizar está habilitado em receitas de bebidas",
+              "timedOut": null,
+              "duration": 10553,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid*=\"ingredient-step\"]').find('input[type=\"checkbox\"]').check();\ncy.get('[data-testid=\"finish-recipe-btn\"]').should('be.enabled');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid*=\"ingredient-step\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid*=\"ingredient-step\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "5395f118-5cad-4e06-a8cb-81353558c9a3",
+              "parentUUID": "655d88cc-cd03-45a5-ace0-02a9ac38e1a2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "57aee50c-9f8e-460d-b753-5bfc879218a2",
+            "4b1c508d-5ecc-4de0-adc4-03915683794c"
+          ],
+          "failures": [
+            "846a2477-5ff5-4742-9771-724ea4e9c062",
+            "5395f118-5cad-4e06-a8cb-81353558c9a3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22842,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "9079f771-8d8d-4eef-8e3f-ef4b8072b627",
+          "title": "53 - Redirecione a pessoa usuária após clicar no botão \"Finalizar receita\", para a página de receitas feitas, cuja rota deve ser `/receitas-feitas`",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "redireciona após concluir uma receita de comida",
+              "fullTitle": "53 - Redirecione a pessoa usuária após clicar no botão \"Finalizar receita\", para a página de receitas feitas, cuja rota deve ser `/receitas-feitas` redireciona após concluir uma receita de comida",
+              "timedOut": null,
+              "duration": 1188,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas/52771/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid*=\"ingredient-step\"]').find('input[type=\"checkbox\"]').check();\ncy.get('[data-testid=\"finish-recipe-btn\"]').click();\ncy.location().should(function (loc) {\n  return expect(loc.pathname).to.eq('/receitas-feitas');\n});",
+              "err": {},
+              "uuid": "b2332f24-fd90-4946-9ab3-28922789fd96",
+              "parentUUID": "9079f771-8d8d-4eef-8e3f-ef4b8072b627",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "redireciona após concluir uma receita de bebida",
+              "fullTitle": "53 - Redirecione a pessoa usuária após clicar no botão \"Finalizar receita\", para a página de receitas feitas, cuja rota deve ser `/receitas-feitas` redireciona após concluir uma receita de bebida",
+              "timedOut": null,
+              "duration": 10494,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas/178319/in-progress', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid*=\"ingredient-step\"]').find('input[type=\"checkbox\"]').check();\ncy.get('[data-testid=\"finish-recipe-btn\"]').click();\ncy.location().should(function (loc) {\n  return expect(loc.pathname).to.eq('/receitas-feitas');\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid*=\"ingredient-step\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid*=\"ingredient-step\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "d8de3da1-c171-4a5d-9f89-692e472e197f",
+              "parentUUID": "9079f771-8d8d-4eef-8e3f-ef4b8072b627",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b2332f24-fd90-4946-9ab3-28922789fd96"
+          ],
+          "failures": [
+            "d8de3da1-c171-4a5d-9f89-692e472e197f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11682,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.2.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

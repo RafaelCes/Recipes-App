@@ -1,0 +1,528 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 15,
+    "passes": 1,
+    "pending": 0,
+    "failures": 14,
+    "start": "2021-08-05T14:53:11.911Z",
+    "end": "2021-08-05T14:55:46.304Z",
+    "duration": 154393,
+    "testsRegistered": 15,
+    "passPercent": 6.666666666666667,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1a9b02a5-7f2a-4085-a6cf-eb275a26a879",
+      "title": "",
+      "fullFile": "cypress/integration/header_search_bar_spec.js",
+      "file": "cypress/integration/header_search_bar_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "30121e15-b048-43f4-b87a-60e408d78e37",
+          "title": "13 - Implemente os elementos da barra de busca respeitando os atributos descritos no protótipo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Tem os data-testids tanto da barra de busca quanto de todos os radio-buttons",
+              "fullTitle": "13 - Implemente os elementos da barra de busca respeitando os atributos descritos no protótipo Tem os data-testids tanto da barra de busca quanto de todos os radio-buttons",
+              "timedOut": null,
+              "duration": 745,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas');\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"search-input\"]');\ncy.get('[data-testid=\"ingredient-search-radio\"]');\ncy.get('[data-testid=\"name-search-radio\"]');\ncy.get('[data-testid=\"first-letter-search-radio\"]');\ncy.get('[data-testid=\"exec-search-btn\"]');",
+              "err": {},
+              "uuid": "e80778af-846a-4b20-b18a-1890696d6878",
+              "parentUUID": "30121e15-b048-43f4-b87a-60e408d78e37",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e80778af-846a-4b20-b18a-1890696d6878"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 745,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e40902d6-c66e-44ba-a583-4867830c6b3e",
+          "title": "14 - Posicione a barra logo abaixo do header e implemente 3 radio buttons: Ingrediente, Nome e Primeira letra",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Se o radio selecionado for Ingrediente, a busca na API é feita corretamente pelo ingrediente",
+              "fullTitle": "14 - Posicione a barra logo abaixo do header e implemente 3 radio buttons: Ingrediente, Nome e Primeira letra Se o radio selecionado for Ingrediente, a busca na API é feita corretamente pelo ingrediente",
+              "timedOut": null,
+              "duration": 10962,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"ingredient-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('chicken');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken\"\n\n    The following calls were made:\n\n    fetch(\"https://www.themealdb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.themealdb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)",
+                "estack": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken\"\n\n    The following calls were made:\n\n    fetch(\"https://www.themealdb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.themealdb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "3f17a776-7719-47da-8ddf-fc1f6943aa23",
+              "parentUUID": "e40902d6-c66e-44ba-a583-4867830c6b3e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Se o radio selecionado for Nome, a busca na API é feita corretamente pelo nome",
+              "fullTitle": "14 - Posicione a barra logo abaixo do header e implemente 3 radio buttons: Ingrediente, Nome e Primeira letra Se o radio selecionado for Nome, a busca na API é feita corretamente pelo nome",
+              "timedOut": null,
+              "duration": 10839,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('soup');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.themealdb.com/api/json/v1/1/search.php?s=soup');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.themealdb.com/api/json/v1/1/search.php?s=soup\"\n\n    The following calls were made:\n\n    fetch(\"https://www.themealdb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.themealdb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)",
+                "estack": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.themealdb.com/api/json/v1/1/search.php?s=soup\"\n\n    The following calls were made:\n\n    fetch(\"https://www.themealdb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.themealdb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "13709e80-80d0-4c74-8a4c-0a0bbe7cfb59",
+              "parentUUID": "e40902d6-c66e-44ba-a583-4867830c6b3e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Se o radio selecionado for Primeira letra, a busca na API é feita corretamente pelo primeira letra",
+              "fullTitle": "14 - Posicione a barra logo abaixo do header e implemente 3 radio buttons: Ingrediente, Nome e Primeira letra Se o radio selecionado for Primeira letra, a busca na API é feita corretamente pelo primeira letra",
+              "timedOut": null,
+              "duration": 10797,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"first-letter-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('a');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.themealdb.com/api/json/v1/1/search.php?f=a');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.themealdb.com/api/json/v1/1/search.php?f=a\"\n\n    The following calls were made:\n\n    fetch(\"https://www.themealdb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.themealdb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)",
+                "estack": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.themealdb.com/api/json/v1/1/search.php?f=a\"\n\n    The following calls were made:\n\n    fetch(\"https://www.themealdb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.themealdb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "04794f40-7f60-4ce7-a229-aecc6376e92e",
+              "parentUUID": "e40902d6-c66e-44ba-a583-4867830c6b3e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Se o radio selecionado for Primeira letra e a busca na API for feita com mais de uma letra, deve-se exibir um alert",
+              "fullTitle": "14 - Posicione a barra logo abaixo do header e implemente 3 radio buttons: Ingrediente, Nome e Primeira letra Se o radio selecionado for Primeira letra e a busca na API for feita com mais de uma letra, deve-se exibir um alert",
+              "timedOut": null,
+              "duration": 10802,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    cy.spy(win, 'alert');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"first-letter-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('aaa');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('alert').should('be.calledWith', 'Sua busca deve conter somente 1 (um) caracter');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected alert to have been called with arguments \"Sua busca deve conter somente 1 (um) caracter\", but it was never called",
+                "estack": "CypressError: Timed out retrying: expected alert to have been called with arguments \"Sua busca deve conter somente 1 (um) caracter\", but it was never called\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "2249d0c7-aa81-4389-b9fa-61f654477163",
+              "parentUUID": "e40902d6-c66e-44ba-a583-4867830c6b3e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3f17a776-7719-47da-8ddf-fc1f6943aa23",
+            "13709e80-80d0-4c74-8a4c-0a0bbe7cfb59",
+            "04794f40-7f60-4ce7-a229-aecc6376e92e",
+            "2249d0c7-aa81-4389-b9fa-61f654477163"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 43400,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "97da8288-945b-4c41-8e76-01bef3abbf4b",
+          "title": "15 - Busque na API de comidas caso a pessoa esteja na página de comidas e na de bebidas caso esteja na de bebidas",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Na tela de bebidas, se o radio selecionado for Ingrediente, a busca na API é feita corretamente pelo ingrediente",
+              "fullTitle": "15 - Busque na API de comidas caso a pessoa esteja na página de comidas e na de bebidas caso esteja na de bebidas Na tela de bebidas, se o radio selecionado for Ingrediente, a busca na API é feita corretamente pelo ingrediente",
+              "timedOut": null,
+              "duration": 10878,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"ingredient-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('lemon');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=lemon');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=lemon\"\n\n    The following calls were made:\n\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)",
+                "estack": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=lemon\"\n\n    The following calls were made:\n\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "e8c74936-90b1-475a-ae30-bfc57b350133",
+              "parentUUID": "97da8288-945b-4c41-8e76-01bef3abbf4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Na tela de bebidas, se o radio selecionado for Nome, a busca na API é feita corretamente pelo nome",
+              "fullTitle": "15 - Busque na API de comidas caso a pessoa esteja na página de comidas e na de bebidas caso esteja na de bebidas Na tela de bebidas, se o radio selecionado for Nome, a busca na API é feita corretamente pelo nome",
+              "timedOut": null,
+              "duration": 10835,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('gin');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=gin');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.thecocktaildb.com/api/json/v1/1/search.php?s=gin\"\n\n    The following calls were made:\n\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)",
+                "estack": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.thecocktaildb.com/api/json/v1/1/search.php?s=gin\"\n\n    The following calls were made:\n\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "15a5b6c9-7987-47ea-83e3-38b2f98cb6ac",
+              "parentUUID": "97da8288-945b-4c41-8e76-01bef3abbf4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Na tela de bebidas, se o radio selecionado for Primeira letra, a busca na API é feita corretamente pelo primeira letra",
+              "fullTitle": "15 - Busque na API de comidas caso a pessoa esteja na página de comidas e na de bebidas caso esteja na de bebidas Na tela de bebidas, se o radio selecionado for Primeira letra, a busca na API é feita corretamente pelo primeira letra",
+              "timedOut": null,
+              "duration": 10791,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"first-letter-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('a');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a\"\n\n    The following calls were made:\n\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)",
+                "estack": "CypressError: Timed out retrying: expected fetch to have been called with arguments \"https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a\"\n\n    The following calls were made:\n\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/search.php?s=\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    fetch(\"https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list\") => {} at fetch (http://localhost:3000/__cypress/runner/cypress_runner.js:59415:54)\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "25f44bec-0523-4fcb-88bd-65b5d9afba5e",
+              "parentUUID": "97da8288-945b-4c41-8e76-01bef3abbf4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Na tela de bebidas, se o radio selecionado for Primeira letra e a busca na API for feita com mais de uma letra, deve-se exibir um alert",
+              "fullTitle": "15 - Busque na API de comidas caso a pessoa esteja na página de comidas e na de bebidas caso esteja na de bebidas Na tela de bebidas, se o radio selecionado for Primeira letra e a busca na API for feita com mais de uma letra, deve-se exibir um alert",
+              "timedOut": null,
+              "duration": 10840,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    cy.spy(win, 'alert');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"first-letter-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('aaa');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('alert').should('be.calledWith', 'Sua busca deve conter somente 1 (um) caracter');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected alert to have been called with arguments \"Sua busca deve conter somente 1 (um) caracter\", but it was never called",
+                "estack": "CypressError: Timed out retrying: expected alert to have been called with arguments \"Sua busca deve conter somente 1 (um) caracter\", but it was never called\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "0f0e4f1e-3712-479e-a6d2-7c8e02d6d75f",
+              "parentUUID": "97da8288-945b-4c41-8e76-01bef3abbf4b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e8c74936-90b1-475a-ae30-bfc57b350133",
+            "15a5b6c9-7987-47ea-83e3-38b2f98cb6ac",
+            "25f44bec-0523-4fcb-88bd-65b5d9afba5e",
+            "0f0e4f1e-3712-479e-a6d2-7c8e02d6d75f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 43344,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "9c992b28-c234-4648-a111-f30394c6b0c1",
+          "title": "16 - Redirecione para a tela de detalhes da receita caso apenas uma receita seja encontrada, com o ID da mesma na URL",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso apenas uma comida seja encontrada, deve-se ir para sua rota de detalhes",
+              "fullTitle": "16 - Redirecione para a tela de detalhes da receita caso apenas uma receita seja encontrada, com o ID da mesma na URL Caso apenas uma comida seja encontrada, deve-se ir para sua rota de detalhes",
+              "timedOut": null,
+              "duration": 10939,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('Arrabiata');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.location().should(function (loc) {\n  return expect(loc.pathname).to.eq('/comidas/52771');\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected '/comidas' to equal '/comidas/52771'",
+                "estack": "CypressError: Timed out retrying: expected '/comidas' to equal '/comidas/52771'\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "988ab81d-046e-4dd2-8ebc-680b39bd660c",
+              "parentUUID": "9c992b28-c234-4648-a111-f30394c6b0c1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso apenas uma bebida seja encontrada, deve-se ir para sua rota de detalhes",
+              "fullTitle": "16 - Redirecione para a tela de detalhes da receita caso apenas uma receita seja encontrada, com o ID da mesma na URL Caso apenas uma bebida seja encontrada, deve-se ir para sua rota de detalhes",
+              "timedOut": null,
+              "duration": 11010,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('Aquamarine');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.location().should(function (loc) {\n  return expect(loc.pathname).to.eq('/bebidas/178319');\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected '/bebidas' to equal '/bebidas/178319'",
+                "estack": "CypressError: Timed out retrying: expected '/bebidas' to equal '/bebidas/178319'\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "dd5064a2-41ae-44e2-b25d-80e339f8b3e3",
+              "parentUUID": "9c992b28-c234-4648-a111-f30394c6b0c1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "988ab81d-046e-4dd2-8ebc-680b39bd660c",
+            "dd5064a2-41ae-44e2-b25d-80e339f8b3e3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 21949,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "ee81c6f6-e9b7-4c40-9dad-2e7fccd06a2d",
+          "title": "17 - Mostre as receitas em cards caso mais de uma receita seja encontrada",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso mais de uma comida seja encontrada, mostrar as 12 primeiras",
+              "fullTitle": "17 - Mostre as receitas em cards caso mais de uma receita seja encontrada Caso mais de uma comida seja encontrada, mostrar as 12 primeiras",
+              "timedOut": null,
+              "duration": 10877,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('soup');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\nsoupMeals.meals.forEach(function (meal, index) {\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-recipe-card\\\"]\"));\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-card-img\\\"]\")).should('have.attr', 'src').should('include', meal['strMealThumb']);\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-card-name\\\"]\")).contains(meal['strMeal']);\n});\ncy.get('[data-testid=\"10-recipe-card\"]').should('not.exist');\ncy.get('[data-testid=\"10-card-img\"]').should('not.exist');\ncy.get('[data-testid=\"10-card-name\"]').should('not.exist');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected 'https://www.themealdb.com/images/media/meals/58oia61564916529.jpg' to include 'https://www.themealdb.com/images/media/meals/x2fw9e1560460636.jpg'",
+                "estack": "CypressError: Timed out retrying: expected 'https://www.themealdb.com/images/media/meals/58oia61564916529.jpg' to include 'https://www.themealdb.com/images/media/meals/x2fw9e1560460636.jpg'\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "ee55da8c-a905-40ed-84ad-dfd852395583",
+              "parentUUID": "ee81c6f6-e9b7-4c40-9dad-2e7fccd06a2d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso mais de uma bebida seja encontrada, mostrar as 12 primeiras",
+              "fullTitle": "17 - Mostre as receitas em cards caso mais de uma receita seja encontrada Caso mais de uma bebida seja encontrada, mostrar as 12 primeiras",
+              "timedOut": null,
+              "duration": 10900,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('gin');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\nginDrinks.drinks.slice(0, 12).forEach(function (drink, index) {\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-recipe-card\\\"]\"));\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-card-img\\\"]\")).should('have.attr', 'src').should('include', drink['strDrinkThumb']);\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-card-name\\\"]\")).contains(drink['strDrink']);\n});\ncy.get('[data-testid=\"12-recipe-card\"]').should('not.exist');\ncy.get('[data-testid=\"12-card-img\"]').should('not.exist');\ncy.get('[data-testid=\"12-card-name\"]').should('not.exist');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected 'https://www.thecocktaildb.com/images/media/drink/vyxwut1468875960.jpg' to include 'https://www.thecocktaildb.com/images/media/drink/xhl8q31504351772.jpg'",
+                "estack": "CypressError: Timed out retrying: expected 'https://www.thecocktaildb.com/images/media/drink/vyxwut1468875960.jpg' to include 'https://www.thecocktaildb.com/images/media/drink/xhl8q31504351772.jpg'\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "d2457f58-d20e-4a25-ab93-f7769585c491",
+              "parentUUID": "ee81c6f6-e9b7-4c40-9dad-2e7fccd06a2d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ee55da8c-a905-40ed-84ad-dfd852395583",
+            "d2457f58-d20e-4a25-ab93-f7769585c491"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 21777,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "c85bf27b-6a11-4739-85e1-245707a2fee1",
+          "title": "18 - Exiba um `alert` caso nenhuma receita seja encontrada",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso nenhuma comida seja encontrada o alert deve ser exibido",
+              "fullTitle": "18 - Exiba um `alert` caso nenhuma receita seja encontrada Caso nenhuma comida seja encontrada o alert deve ser exibido",
+              "timedOut": null,
+              "duration": 10951,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n    cy.spy(win, 'alert');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('xablau');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('alert').should('be.calledWith', 'Sinto muito, não encontramos nenhuma receita para esses filtros.');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected alert to have been called with arguments \"Sinto muito, não encontramos nenhuma receita para esses filtros.\", but it was never called",
+                "estack": "CypressError: Timed out retrying: expected alert to have been called with arguments \"Sinto muito, não encontramos nenhuma receita para esses filtros.\", but it was never called\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "08654573-d74b-46c8-8897-8f6623995d9d",
+              "parentUUID": "c85bf27b-6a11-4739-85e1-245707a2fee1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso nenhuma bebida seja encontrada o alert deve ser exibido",
+              "fullTitle": "18 - Exiba um `alert` caso nenhuma receita seja encontrada Caso nenhuma bebida seja encontrada o alert deve ser exibido",
+              "timedOut": null,
+              "duration": 10880,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n    cy.spy(win, 'alert');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('xablau');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('alert').should('be.calledWith', 'Sinto muito, não encontramos nenhuma receita para esses filtros.');",
+              "err": {
+                "message": "CypressError: Timed out retrying: expected alert to have been called with arguments \"Sinto muito, não encontramos nenhuma receita para esses filtros.\", but it was never called",
+                "estack": "CypressError: Timed out retrying: expected alert to have been called with arguments \"Sinto muito, não encontramos nenhuma receita para esses filtros.\", but it was never called\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "daa92e29-b06b-458e-8062-f7c757ade018",
+              "parentUUID": "c85bf27b-6a11-4739-85e1-245707a2fee1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "08654573-d74b-46c8-8897-8f6623995d9d",
+            "daa92e29-b06b-458e-8062-f7c757ade018"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 21831,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.2.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

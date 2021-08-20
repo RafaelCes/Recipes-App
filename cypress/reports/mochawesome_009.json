@@ -1,0 +1,739 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 24,
+    "passes": 12,
+    "pending": 0,
+    "failures": 12,
+    "start": "2021-08-03T23:01:59.308Z",
+    "end": "2021-08-03T23:04:12.058Z",
+    "duration": 132750,
+    "testsRegistered": 24,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9ed7444d-63ad-41b2-9381-4c1f1ae6ba7b",
+      "title": "",
+      "fullFile": "cypress/integration/recipes_list_spec.js",
+      "file": "cypress/integration/recipes_list_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3a307a2e-9bca-4e83-8ba2-cefbf9a7af60",
+          "title": "25 - Implemente os elementos da tela principal de receitas respeitando os atributos descritos no protótipo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A tela tem os data-testids de todos os 12 cards da tela de comidas",
+              "fullTitle": "25 - Implemente os elementos da tela principal de receitas respeitando os atributos descritos no protótipo A tela tem os data-testids de todos os 12 cards da tela de comidas",
+              "timedOut": null,
+              "duration": 2156,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\nfor (var index = 0; index < 12; index += 1) {\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-recipe-card\\\"]\"));\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-card-img\\\"]\"));\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-card-name\\\"]\"));\n}\ncy.get('[data-testid=\"12-recipe-card\"]').should('not.exist');\ncy.get('[data-testid=\"12-card-img\"]').should('not.exist');\ncy.get('[data-testid=\"12-card-name\"]').should('not.exist');",
+              "err": {},
+              "uuid": "b64c5159-ea6f-49a5-b1b5-370982bfc02c",
+              "parentUUID": "3a307a2e-9bca-4e83-8ba2-cefbf9a7af60",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "A tela tem os data-testids de todos os 12 cards da tela de bebidas",
+              "fullTitle": "25 - Implemente os elementos da tela principal de receitas respeitando os atributos descritos no protótipo A tela tem os data-testids de todos os 12 cards da tela de bebidas",
+              "timedOut": null,
+              "duration": 10378,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\nfor (var index = 0; index < 12; index += 1) {\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-recipe-card\\\"]\"));\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-card-img\\\"]\"));\n  cy.get(\"[data-testid=\\\"\".concat(index, \"-card-name\\\"]\"));\n}\ncy.get('[data-testid=\"12-recipe-card\"]').should('not.exist');\ncy.get('[data-testid=\"12-card-img\"]').should('not.exist');\ncy.get('[data-testid=\"12-card-name\"]').should('not.exist');",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"0-recipe-card\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"0-recipe-card\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "794cc752-32ee-47bd-a863-a964a9cdd2f2",
+              "parentUUID": "3a307a2e-9bca-4e83-8ba2-cefbf9a7af60",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b64c5159-ea6f-49a5-b1b5-370982bfc02c"
+          ],
+          "failures": [
+            "794cc752-32ee-47bd-a863-a964a9cdd2f2"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12534,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "86c28232-e096-4fac-971d-e6c51731eab2",
+          "title": "26 - Carregue as 12 primeiras receitas de comidas ou bebidas, uma em cada card",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso as receitas sejam de comida, deve-se carregar as 12 primeiras receitas",
+              "fullTitle": "26 - Carregue as 12 primeiras receitas de comidas ou bebidas, uma em cada card Caso as receitas sejam de comida, deve-se carregar as 12 primeiras receitas",
+              "timedOut": null,
+              "duration": 525,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncheckFirstTwelveRecipes(mealsMock.meals);",
+              "err": {},
+              "uuid": "3de96d78-ac91-49da-8b21-1f0d230f856b",
+              "parentUUID": "86c28232-e096-4fac-971d-e6c51731eab2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de bebida, deve-se carregar as 12 primeiras receitas",
+              "fullTitle": "26 - Carregue as 12 primeiras receitas de comidas ou bebidas, uma em cada card Caso as receitas sejam de bebida, deve-se carregar as 12 primeiras receitas",
+              "timedOut": null,
+              "duration": 10415,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncheckFirstTwelveRecipes(drinksMock.drinks, false);",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"0-recipe-card\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"0-recipe-card\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "bacf9765-2f8d-498b-83fe-669320cecf13",
+              "parentUUID": "86c28232-e096-4fac-971d-e6c51731eab2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3de96d78-ac91-49da-8b21-1f0d230f856b"
+          ],
+          "failures": [
+            "bacf9765-2f8d-498b-83fe-669320cecf13"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10940,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "ba1529f9-63d7-4f6e-9c33-ff9c81b64040",
+          "title": "27 - Implemente os botões de categoria para serem utilizados como filtro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso as receitas sejam de comida, deve-se exibir as 5 primeiras categorias de comida",
+              "fullTitle": "27 - Implemente os botões de categoria para serem utilizados como filtro Caso as receitas sejam de comida, deve-se exibir as 5 primeiras categorias de comida",
+              "timedOut": null,
+              "duration": 197,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\nmealCategoriesMock.meals.slice(0, 5).forEach(function (_ref) {\n  var category = _ref.strCategory;\n  cy.get(\"[data-testid=\\\"\".concat(category, \"-category-filter\\\"]\"));\n});\nmealCategoriesMock.meals.slice(5).forEach(function (_ref2) {\n  var category = _ref2.strCategory;\n  cy.get(\"[data-testid=\\\"\".concat(category, \"-category-filter\\\"]\")).should('not.exist');\n});",
+              "err": {},
+              "uuid": "3d1bf1e2-6fe7-4ebd-9677-dceffae7bf21",
+              "parentUUID": "ba1529f9-63d7-4f6e-9c33-ff9c81b64040",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de bebida, deve-se exibir as 5 primeiras categorias de bebida",
+              "fullTitle": "27 - Implemente os botões de categoria para serem utilizados como filtro Caso as receitas sejam de bebida, deve-se exibir as 5 primeiras categorias de bebida",
+              "timedOut": null,
+              "duration": 10333,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ndrinkCategoriesMock.drinks.slice(0, 5).forEach(function (_ref3) {\n  var category = _ref3.strCategory;\n  cy.get(\"[data-testid=\\\"\".concat(category, \"-category-filter\\\"]\"));\n});\ndrinkCategoriesMock.drinks.slice(5).forEach(function (_ref4) {\n  var category = _ref4.strCategory;\n  cy.get(\"[data-testid=\\\"\".concat(category, \"-category-filter\\\"]\")).should('not.exist');\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Ordinary Drink-category-filter\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Ordinary Drink-category-filter\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "5aa413c0-4007-443d-b9e0-1f5efb9ac7a3",
+              "parentUUID": "ba1529f9-63d7-4f6e-9c33-ff9c81b64040",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3d1bf1e2-6fe7-4ebd-9677-dceffae7bf21"
+          ],
+          "failures": [
+            "5aa413c0-4007-443d-b9e0-1f5efb9ac7a3"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10530,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "52d31b9f-39cd-49d4-aa5e-b3661380c301",
+          "title": "28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso as receitas sejam de comida e a categoria seja \"Beef\", deve-se carregar as 12 primeiras receitas de \"Beef\"",
+              "fullTitle": "28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria Caso as receitas sejam de comida e a categoria seja \"Beef\", deve-se carregar as 12 primeiras receitas de \"Beef\"",
+              "timedOut": null,
+              "duration": 419,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Beef-category-filter\"]').click();\ncheckFirstTwelveRecipes(beefMealsMock.meals);",
+              "err": {},
+              "uuid": "d78e6ec0-6a3b-4898-9ee3-3534fb9d5abd",
+              "parentUUID": "52d31b9f-39cd-49d4-aa5e-b3661380c301",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de comida e a categoria seja \"Breakfast\", deve-se carregar as 12 primeiras receitas de \"Breakfast\"",
+              "fullTitle": "28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria Caso as receitas sejam de comida e a categoria seja \"Breakfast\", deve-se carregar as 12 primeiras receitas de \"Breakfast\"",
+              "timedOut": null,
+              "duration": 376,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Breakfast-category-filter\"]').click();\ncheckFirstTwelveRecipes(breakfastMealsMock.meals);",
+              "err": {},
+              "uuid": "32921781-87dc-4c47-a998-a6d32a3e7648",
+              "parentUUID": "52d31b9f-39cd-49d4-aa5e-b3661380c301",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de comida e a categoria seja \"Chicken\", deve-se carregar as 12 primeiras receitas de \"Chicken\"",
+              "fullTitle": "28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria Caso as receitas sejam de comida e a categoria seja \"Chicken\", deve-se carregar as 12 primeiras receitas de \"Chicken\"",
+              "timedOut": null,
+              "duration": 339,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Chicken-category-filter\"]').click();\ncheckFirstTwelveRecipes(chickenMealsMock.meals);",
+              "err": {},
+              "uuid": "074cf3b4-384e-4a9d-8abb-4f405d749a2d",
+              "parentUUID": "52d31b9f-39cd-49d4-aa5e-b3661380c301",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de comida e a categoria seja \"Dessert\", deve-se carregar as 12 primeiras receitas de \"Dessert\"",
+              "fullTitle": "28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria Caso as receitas sejam de comida e a categoria seja \"Dessert\", deve-se carregar as 12 primeiras receitas de \"Dessert\"",
+              "timedOut": null,
+              "duration": 401,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Dessert-category-filter\"]').click();\ncheckFirstTwelveRecipes(dessertMealsMock.meals);",
+              "err": {},
+              "uuid": "8006c032-6f69-430d-99de-3c3fb59d01fb",
+              "parentUUID": "52d31b9f-39cd-49d4-aa5e-b3661380c301",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de comida e a categoria seja \"Goat\", deve-se carregar as 12 primeiras receitas de \"Goat\"",
+              "fullTitle": "28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria Caso as receitas sejam de comida e a categoria seja \"Goat\", deve-se carregar as 12 primeiras receitas de \"Goat\"",
+              "timedOut": null,
+              "duration": 255,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Goat-category-filter\"]').click();\ncheckFirstTwelveRecipes(goatMealsMock.meals);",
+              "err": {},
+              "uuid": "c40ff232-0057-492c-a696-eaf24647d2b5",
+              "parentUUID": "52d31b9f-39cd-49d4-aa5e-b3661380c301",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de bebida e a categoria seja \"Ordinary Drink\", deve-se carregar as 12 primeiras receitas de \"Ordinary Drink\"",
+              "fullTitle": "28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria Caso as receitas sejam de bebida e a categoria seja \"Ordinary Drink\", deve-se carregar as 12 primeiras receitas de \"Ordinary Drink\"",
+              "timedOut": null,
+              "duration": 10304,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Ordinary Drink-category-filter\"]').click();\ncheckFirstTwelveRecipes(ordinaryDrinksMock.drinks, false);",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Ordinary Drink-category-filter\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Ordinary Drink-category-filter\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "666e6af0-49bc-4fb5-a8e3-685174410f2a",
+              "parentUUID": "52d31b9f-39cd-49d4-aa5e-b3661380c301",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de bebida e a categoria seja \"Cocktail\", deve-se carregar as 12 primeiras receitas de \"Cocktail\"",
+              "fullTitle": "28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria Caso as receitas sejam de bebida e a categoria seja \"Cocktail\", deve-se carregar as 12 primeiras receitas de \"Cocktail\"",
+              "timedOut": null,
+              "duration": 10329,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Cocktail-category-filter\"]').click();\ncheckFirstTwelveRecipes(cocktailDrinksMock.drinks, false);",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Cocktail-category-filter\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Cocktail-category-filter\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "a8232233-bbd2-4fe7-9331-5f8564d42278",
+              "parentUUID": "52d31b9f-39cd-49d4-aa5e-b3661380c301",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de bebida e a categoria seja \"Milk / Float / Shake\", deve-se carregar as 12 primeiras receitas de \"Milk / Float / Shake\"",
+              "fullTitle": "28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria Caso as receitas sejam de bebida e a categoria seja \"Milk / Float / Shake\", deve-se carregar as 12 primeiras receitas de \"Milk / Float / Shake\"",
+              "timedOut": null,
+              "duration": 10359,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Milk / Float / Shake-category-filter\"]').click();\ncheckFirstTwelveRecipes(milkDrinksMock.drinks, false);",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Milk / Float / Shake-category-filter\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Milk / Float / Shake-category-filter\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "5154912e-6417-4984-9486-b727e347a0e7",
+              "parentUUID": "52d31b9f-39cd-49d4-aa5e-b3661380c301",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de bebida e a categoria seja \"Other/Unknown\", deve-se carregar as 12 primeiras receitas de \"Other/Unknown\"",
+              "fullTitle": "28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria Caso as receitas sejam de bebida e a categoria seja \"Other/Unknown\", deve-se carregar as 12 primeiras receitas de \"Other/Unknown\"",
+              "timedOut": null,
+              "duration": 10315,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Other/Unknown-category-filter\"]').click();\ncheckFirstTwelveRecipes(otherDrinksMock.drinks, false);",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Other/Unknown-category-filter\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Other/Unknown-category-filter\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "b5e4361d-b54e-4ed4-9958-f4fa6a17162f",
+              "parentUUID": "52d31b9f-39cd-49d4-aa5e-b3661380c301",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de bebida e a categoria seja \"Cocoa\", deve-se carregar as 12 primeiras receitas de \"Cocoa\"",
+              "fullTitle": "28 - Implemente o filtro das receitas através da API ao clicar no filtro de categoria Caso as receitas sejam de bebida e a categoria seja \"Cocoa\", deve-se carregar as 12 primeiras receitas de \"Cocoa\"",
+              "timedOut": null,
+              "duration": 10375,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Cocoa-category-filter\"]').click();\ncheckFirstTwelveRecipes(cocoaDrinksMock.drinks, false);",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Cocoa-category-filter\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Cocoa-category-filter\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "25e0c2e7-4c21-47a3-97c2-aace4d118221",
+              "parentUUID": "52d31b9f-39cd-49d4-aa5e-b3661380c301",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d78e6ec0-6a3b-4898-9ee3-3534fb9d5abd",
+            "32921781-87dc-4c47-a998-a6d32a3e7648",
+            "074cf3b4-384e-4a9d-8abb-4f405d749a2d",
+            "8006c032-6f69-430d-99de-3c3fb59d01fb",
+            "c40ff232-0057-492c-a696-eaf24647d2b5"
+          ],
+          "failures": [
+            "666e6af0-49bc-4fb5-a8e3-685174410f2a",
+            "a8232233-bbd2-4fe7-9331-5f8564d42278",
+            "5154912e-6417-4984-9486-b727e347a0e7",
+            "b5e4361d-b54e-4ed4-9958-f4fa6a17162f",
+            "25e0c2e7-4c21-47a3-97c2-aace4d118221"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 53472,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "fbc4d16e-f7f3-4b2a-b093-cba1af34a4ae",
+          "title": "29 - Implemente o filtro como um toggle, que se for selecionado de novo, o app deve retornar as receitas sem nenhum filtro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso as receitas sejam de comida e o filtro tenha sido selecionado novamente, deve-se retornar as 12 primeiras receitas sem filtro",
+              "fullTitle": "29 - Implemente o filtro como um toggle, que se for selecionado de novo, o app deve retornar as receitas sem nenhum filtro Caso as receitas sejam de comida e o filtro tenha sido selecionado novamente, deve-se retornar as 12 primeiras receitas sem filtro",
+              "timedOut": null,
+              "duration": 480,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Beef-category-filter\"]').click();\ncy.get('[data-testid=\"Beef-category-filter\"]').click();\ncheckFirstTwelveRecipes(mealsMock.meals);",
+              "err": {},
+              "uuid": "06db7169-a987-4599-aef1-5e34cb0415fb",
+              "parentUUID": "fbc4d16e-f7f3-4b2a-b093-cba1af34a4ae",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de bebida e o filtro tenha sido selecionado novamente, deve-se retornar as 12 primeiras receitas sem filtro",
+              "fullTitle": "29 - Implemente o filtro como um toggle, que se for selecionado de novo, o app deve retornar as receitas sem nenhum filtro Caso as receitas sejam de bebida e o filtro tenha sido selecionado novamente, deve-se retornar as 12 primeiras receitas sem filtro",
+              "timedOut": null,
+              "duration": 10361,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Ordinary Drink-category-filter\"]').click();\ncy.get('[data-testid=\"Ordinary Drink-category-filter\"]').click();\ncheckFirstTwelveRecipes(drinksMock.drinks, false);",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Ordinary Drink-category-filter\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Ordinary Drink-category-filter\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "fdff4d8e-4e9e-498c-84b5-10e59c10cc21",
+              "parentUUID": "fbc4d16e-f7f3-4b2a-b093-cba1af34a4ae",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "06db7169-a987-4599-aef1-5e34cb0415fb"
+          ],
+          "failures": [
+            "fdff4d8e-4e9e-498c-84b5-10e59c10cc21"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10841,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "c9b03ce1-3717-4846-8946-37ceb3113c75",
+          "title": "30 - Implemente o filtro de categoria para que apenas um seja selecionado por vez",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso as receitas sejam de comida apenas um filtro de categoria deve poder ser selecionado por vez",
+              "fullTitle": "30 - Implemente o filtro de categoria para que apenas um seja selecionado por vez Caso as receitas sejam de comida apenas um filtro de categoria deve poder ser selecionado por vez",
+              "timedOut": null,
+              "duration": 520,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Beef-category-filter\"]').click();\ncheckFirstTwelveRecipes(beefMealsMock.meals);\ncy.get('[data-testid=\"Breakfast-category-filter\"]').click();\ncheckFirstTwelveRecipes(breakfastMealsMock.meals);",
+              "err": {},
+              "uuid": "5ca92724-a578-425d-a23b-1aa02d2a6f11",
+              "parentUUID": "c9b03ce1-3717-4846-8946-37ceb3113c75",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de bebida apenas um filtro de categoria deve poder ser selecionado por vez",
+              "fullTitle": "30 - Implemente o filtro de categoria para que apenas um seja selecionado por vez Caso as receitas sejam de bebida apenas um filtro de categoria deve poder ser selecionado por vez",
+              "timedOut": null,
+              "duration": 10304,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Ordinary Drink-category-filter\"]').click();\ncheckFirstTwelveRecipes(ordinaryDrinksMock.drinks, false);\ncy.get('[data-testid=\"Cocktail-category-filter\"]').click();\ncheckFirstTwelveRecipes(cocktailDrinksMock.drinks, false);",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Ordinary Drink-category-filter\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Ordinary Drink-category-filter\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "af80d3b4-8b40-404b-a94c-143318042d69",
+              "parentUUID": "c9b03ce1-3717-4846-8946-37ceb3113c75",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5ca92724-a578-425d-a23b-1aa02d2a6f11"
+          ],
+          "failures": [
+            "af80d3b4-8b40-404b-a94c-143318042d69"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10824,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "fe56b3d7-f629-4362-8375-3ab12e75e35f",
+          "title": "31 - Desenvolva o filtro de categorias com a opção de filtrar por todas as categorias",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso as receitas sejam de comida deve existir a opção de filtrar por todas as categorias",
+              "fullTitle": "31 - Desenvolva o filtro de categorias com a opção de filtrar por todas as categorias Caso as receitas sejam de comida deve existir a opção de filtrar por todas as categorias",
+              "timedOut": null,
+              "duration": 578,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Beef-category-filter\"]').click();\ncheckFirstTwelveRecipes(beefMealsMock.meals);\ncy.get('[data-testid=\"All-category-filter\"]').click();\ncheckFirstTwelveRecipes(mealsMock.meals);",
+              "err": {},
+              "uuid": "3403683b-20ac-4dfc-b7bf-0ce49743545b",
+              "parentUUID": "fe56b3d7-f629-4362-8375-3ab12e75e35f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de bebida deve existir a opção de filtrar por todas as categorias",
+              "fullTitle": "31 - Desenvolva o filtro de categorias com a opção de filtrar por todas as categorias Caso as receitas sejam de bebida deve existir a opção de filtrar por todas as categorias",
+              "timedOut": null,
+              "duration": 10294,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"Ordinary Drink-category-filter\"]').click();\ncheckFirstTwelveRecipes(ordinaryDrinksMock.drinks, false);\ncy.get('[data-testid=\"All-category-filter\"]').click();\ncheckFirstTwelveRecipes(drinksMock.drinks, false);",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Ordinary Drink-category-filter\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"Ordinary Drink-category-filter\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "23197305-895e-47d2-af74-924349618c8a",
+              "parentUUID": "fe56b3d7-f629-4362-8375-3ab12e75e35f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3403683b-20ac-4dfc-b7bf-0ce49743545b"
+          ],
+          "failures": [
+            "23197305-895e-47d2-af74-924349618c8a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10872,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "8f9dd487-c89a-42a1-8368-a968aab7fa8c",
+          "title": "32 - Redirecione a pessoa usuária, ao clicar no card, para a tela de detalhes, que deve mudar a rota e conter o id da receita na URL",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso as receitas sejam de comida a rota deve mudar para a tela de detalhes da receita",
+              "fullTitle": "32 - Redirecione a pessoa usuária, ao clicar no card, para a tela de detalhes, que deve mudar a rota e conter o id da receita na URL Caso as receitas sejam de comida a rota deve mudar para a tela de detalhes da receita",
+              "timedOut": null,
+              "duration": 276,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/comidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"0-recipe-card\"]').click();\ncy.location().should(function (loc) {\n  return expect(loc.pathname).to.eq('/comidas/52977');\n});",
+              "err": {},
+              "uuid": "720c1cb6-3062-4017-97cf-127765e3aec1",
+              "parentUUID": "8f9dd487-c89a-42a1-8368-a968aab7fa8c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso as receitas sejam de bebida a rota deve mudar para a tela de detalhes da receita",
+              "fullTitle": "32 - Redirecione a pessoa usuária, ao clicar no card, para a tela de detalhes, que deve mudar a rota e conter o id da receita na URL Caso as receitas sejam de bebida a rota deve mudar para a tela de detalhes da receita",
+              "timedOut": null,
+              "duration": 10320,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/bebidas', {\n  onBeforeLoad: function onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"0-recipe-card\"]').click();\ncy.location().should(function (loc) {\n  return expect(loc.pathname).to.eq('/bebidas/15997');\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"0-recipe-card\"]', but never found it.",
+                "estack": "CypressError: Timed out retrying: Expected to find element: '[data-testid=\"0-recipe-card\"]', but never found it.\n    at Object.cypressErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86207:11)\n    at Object.throwErr (http://localhost:3000/__cypress/runner/cypress_runner.js:86162:18)\n    at Object.throwErrByPath (http://localhost:3000/__cypress/runner/cypress_runner.js:86194:17)\n    at retry (http://localhost:3000/__cypress/runner/cypress_runner.js:76849:16)\n    at onFailFn (http://localhost:3000/__cypress/runner/cypress_runner.js:65634:16)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:120203:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:118139:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:118196:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:118241:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:118316:18)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:114928:16)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114938:10)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:114812:14)",
+                "diff": null
+              },
+              "uuid": "abff3426-32c5-42f7-840c-92f74ab4433f",
+              "parentUUID": "8f9dd487-c89a-42a1-8368-a968aab7fa8c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "720c1cb6-3062-4017-97cf-127765e3aec1"
+          ],
+          "failures": [
+            "abff3426-32c5-42f7-840c-92f74ab4433f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10596,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.2.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
