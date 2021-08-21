@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/Recipe-App/static/css/main.72e71eb6.chunk.css",
+    "main.js": "/Recipe-App/static/js/main.6e263d2f.chunk.js",
+    "main.js.map": "/Recipe-App/static/js/main.6e263d2f.chunk.js.map",
+    "runtime-main.js": "/Recipe-App/static/js/runtime-main.95426c1a.js",
+    "runtime-main.js.map": "/Recipe-App/static/js/runtime-main.95426c1a.js.map",
+    "static/css/2.9165716f.chunk.css": "/Recipe-App/static/css/2.9165716f.chunk.css",
+    "static/js/2.8ce0ea9f.chunk.js": "/Recipe-App/static/js/2.8ce0ea9f.chunk.js",
+    "static/js/2.8ce0ea9f.chunk.js.map": "/Recipe-App/static/js/2.8ce0ea9f.chunk.js.map",
+    "index.html": "/Recipe-App/index.html",
+    "precache-manifest.e98de48dfcbd72c94e9d6596f9a59acb.js": "/Recipe-App/precache-manifest.e98de48dfcbd72c94e9d6596f9a59acb.js",
+    "service-worker.js": "/Recipe-App/service-worker.js",
+    "static/css/2.9165716f.chunk.css.map": "/Recipe-App/static/css/2.9165716f.chunk.css.map",
+    "static/css/main.72e71eb6.chunk.css.map": "/Recipe-App/static/css/main.72e71eb6.chunk.css.map",
+    "static/js/2.8ce0ea9f.chunk.js.LICENSE.txt": "/Recipe-App/static/js/2.8ce0ea9f.chunk.js.LICENSE.txt",
+    "static/media/blackHeartIcon.svg": "/Recipe-App/static/media/blackHeartIcon.b8913346.svg",
+    "static/media/ExplorebyFoodandDrink.css": "/Recipe-App/static/media/food.9eaf0ee3.jpeg",
+    "static/media/drinkIcon.svg": "/Recipe-App/static/media/drinkIcon.f87c47c3.svg",
+    "static/media/exploreIcon.svg": "/Recipe-App/static/media/exploreIcon.157945ff.svg",
+    "static/media/Login.css": "/Recipe-App/static/media/food-wallpaper.b54995c6.jpg",
+    "static/media/Explore-Profile.css": "/Recipe-App/static/media/fruits.5945d0a1.jpg",
+    "static/media/mealIcon.svg": "/Recipe-App/static/media/mealIcon.b27ba19e.svg",
+    "static/media/profileIcon.svg": "/Recipe-App/static/media/profileIcon.74e487e5.svg",
+    "static/media/searchIcon.svg": "/Recipe-App/static/media/searchIcon.db812135.svg",
+    "static/media/shareIcon.svg": "/Recipe-App/static/media/shareIcon.06215ed4.svg",
+    "static/media/whiteHeartIcon.svg": "/Recipe-App/static/media/whiteHeartIcon.ea3b6ba8.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95426c1a.js",
+    "static/css/2.9165716f.chunk.css",
+    "static/js/2.8ce0ea9f.chunk.js",
+    "static/css/main.72e71eb6.chunk.css",
+    "static/js/main.6e263d2f.chunk.js"
+  ]
+}
