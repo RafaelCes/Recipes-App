@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/react-Recipe-App/static/css/main.2e4e4407.chunk.css",
+    "main.js": "/react-Recipe-App/static/js/main.0f7d8534.chunk.js",
+    "main.js.map": "/react-Recipe-App/static/js/main.0f7d8534.chunk.js.map",
+    "runtime-main.js": "/react-Recipe-App/static/js/runtime-main.23c52f16.js",
+    "runtime-main.js.map": "/react-Recipe-App/static/js/runtime-main.23c52f16.js.map",
+    "static/css/2.9165716f.chunk.css": "/react-Recipe-App/static/css/2.9165716f.chunk.css",
+    "static/js/2.8ce0ea9f.chunk.js": "/react-Recipe-App/static/js/2.8ce0ea9f.chunk.js",
+    "static/js/2.8ce0ea9f.chunk.js.map": "/react-Recipe-App/static/js/2.8ce0ea9f.chunk.js.map",
+    "index.html": "/react-Recipe-App/index.html",
+    "precache-manifest.678243620cb62754f8845690b666833d.js": "/react-Recipe-App/precache-manifest.678243620cb62754f8845690b666833d.js",
+    "service-worker.js": "/react-Recipe-App/service-worker.js",
+    "static/css/2.9165716f.chunk.css.map": "/react-Recipe-App/static/css/2.9165716f.chunk.css.map",
+    "static/css/main.2e4e4407.chunk.css.map": "/react-Recipe-App/static/css/main.2e4e4407.chunk.css.map",
+    "static/js/2.8ce0ea9f.chunk.js.LICENSE.txt": "/react-Recipe-App/static/js/2.8ce0ea9f.chunk.js.LICENSE.txt",
+    "static/media/blackHeartIcon.svg": "/react-Recipe-App/static/media/blackHeartIcon.b8913346.svg",
+    "static/media/ExplorebyFoodandDrink.css": "/react-Recipe-App/static/media/food.9eaf0ee3.jpeg",
+    "static/media/drinkIcon.svg": "/react-Recipe-App/static/media/drinkIcon.f87c47c3.svg",
+    "static/media/exploreIcon.svg": "/react-Recipe-App/static/media/exploreIcon.157945ff.svg",
+    "static/media/Login.css": "/react-Recipe-App/static/media/food-wallpaper.b54995c6.jpg",
+    "static/media/Explore-Profile.css": "/react-Recipe-App/static/media/fruits.5945d0a1.jpg",
+    "static/media/mealIcon.svg": "/react-Recipe-App/static/media/mealIcon.b27ba19e.svg",
+    "static/media/profileIcon.svg": "/react-Recipe-App/static/media/profileIcon.74e487e5.svg",
+    "static/media/searchIcon.svg": "/react-Recipe-App/static/media/searchIcon.db812135.svg",
+    "static/media/shareIcon.svg": "/react-Recipe-App/static/media/shareIcon.06215ed4.svg",
+    "static/media/whiteHeartIcon.svg": "/react-Recipe-App/static/media/whiteHeartIcon.ea3b6ba8.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.23c52f16.js",
+    "static/css/2.9165716f.chunk.css",
+    "static/js/2.8ce0ea9f.chunk.js",
+    "static/css/main.2e4e4407.chunk.css",
+    "static/js/main.0f7d8534.chunk.js"
+  ]
+}
