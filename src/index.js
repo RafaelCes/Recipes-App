@@ -10,7 +10,6 @@ import store from './redux/store';
 ReactDOM.render(
   <Provider store={ store }>
     <BrowserRouter basename="/recipes-app">
-      oi teste
       <App />
     </BrowserRouter>
   </Provider>,
